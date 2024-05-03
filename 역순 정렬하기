@@ -1,0 +1,7 @@
+SELECT NAME, DATETIME
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID DESC;
+
+// SELECT 속성
+// FROM 테이블
+// ORDER BY 속성 정렬방식(ASC : 오름차순 / DESC : 내림차순);
