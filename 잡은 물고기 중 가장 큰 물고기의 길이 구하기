@@ -1,0 +1,9 @@
+SELECT CONCAT(LENGTH, 'cm') AS MAX_LENGTH
+FROM FISH_INFO
+ORDER BY LENGTH DESC  // 큰 값부터 나열
+LIMIT 1;  // 가장 큰 값 찾기
+
+// SELECT CONCAT(문자열1(속성) , 문자열2) AS 별칭  (CONCAT : 문자열 합치기)
+// FROM 테이블
+// ORDER BY 속성 내림차순
+// LIMIT 시작점;  (LIMIT : 일정 부분만 추출하기)
