@@ -1,0 +1,6 @@
+SELECT ROUND(SUM(IFNULL(LENGTH, 10))/COUNT(*),2) AS AVERAGE_LENGTH  // 평균 구하기
+FROM FISH_INFO;
+
+// (ROUND : 반올림 / IFNULL : NULL 반환할 경우 다른 값으로 출력 / COUNT : 데이터 갯수 가져오기)
+// SELECT ROUND(SUM(IFNULL(컬럼명, NULL일 경우 대체값))/COUNT(*), 데이터 수) AS 별칭
+// FROM 테이블;
