@@ -1,0 +1,5 @@
+SELECT MAX(PRICE) AS MAX_PRICE
+FROM PRODUCT;
+
+// SELECT 집계함수(속성) AS 별칭
+// FROM 테이블;
