@@ -1,0 +1,11 @@
+SELECT ANIMAL_ID,NAME
+FROM ANIMAL_INS
+WHERE LOWER(NAME) LIKE LOWER('%el%')  // 'el' 들어가는지 확인
+AND ANIMAL_TYPE = 'Dog'
+ORDER BY NAME
+
+// SELECT 속성
+// FROM 테이블
+// WHERE LOWER(속성) LIKE 특정 문자  (LOWER : 소문자로 변환 / LIKE : 특정 문자 포함 여부 확인)
+// AND 조건
+// ORDER BY 속성
