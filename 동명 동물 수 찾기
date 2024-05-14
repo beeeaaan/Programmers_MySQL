@@ -1,0 +1,11 @@
+SELECT NAME, COUNT(NAME) AS COUNT
+FROM ANIMAL_INS
+GROUP BY NAME
+HAVING COUNT >= 2  // 중복일 경우 2개 이상이므로
+ORDER BY NAME
+
+// SELECT 속성 AS 별칭
+// FROM 테이블
+// GROUP BY 속성 (집계함수 GROUP BY에 사용 가능)
+// HAVING 조건
+// ORDER BY 속성
