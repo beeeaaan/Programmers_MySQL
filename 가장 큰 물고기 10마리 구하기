@@ -1,0 +1,9 @@
+SELECT ID, LENGTH
+FROM FISH_INFO
+ORDER BY LENGTH DESC, ID  // 내림차순 정렬
+LIMIT 10;  // 10마리
+
+// SELECT 속성
+// FROM 테이블
+// ORDER BY 속성 내림차순
+// LIMIT 개수;  (LIMTI : 일정 개수만 출력하기)
