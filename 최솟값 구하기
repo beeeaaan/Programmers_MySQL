@@ -1,0 +1,5 @@
+SELECT MIN(DATETIME)  // 집계함수로 최솟값 구하기
+FROM ANIMAL_INS;
+
+// SELECT MIN(속성)
+// FROM 테이블;
