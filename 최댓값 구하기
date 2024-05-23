@@ -1,0 +1,5 @@
+SELECT MAX(DATETIME) AS 시간
+FROM ANIMAL_INS;
+
+// SELECT 집계함수(속성) AS 별칭  (MAX : 최댓값)
+FROM 테이블;
