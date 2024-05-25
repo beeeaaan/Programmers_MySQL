@@ -1,0 +1,7 @@
+SELECT *
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;  // ANIMAL_ID순으로 조회
+
+// SELECT 속성 (* : 전체 검색)
+// FROM 테이블
+// ORDER BY 속성;
