@@ -1,0 +1,9 @@
+SELECT *
+FROM CAR_RENTAL_COMPANY_CAR
+WHERE OPTIONS LIKE '%네비게이션%'
+ORDER BY CAR_ID DESC;
+
+SELECT 속성
+FROM 테이블
+WHERE 속성 LIKE 문자열  (LIKE : 문자열 부분 일치 검색)
+ORDER BY 속성 오름차순(ASC) / 내림차순(DESC);
