@@ -1,0 +1,13 @@
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d') AS DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE MONTH(DATE_OF_BIRTH) = 3  // 3월에 태어난
+AND TLNO IS NOT NULL
+AND GENDER ='W'  // 여성
+ORDER BY MEMBER_ID;
+
+// DATE_FORMAT(시간값, 원하는 포맷) : 원하는 날짜 형식 설정
+%Y : 	년도 - Year(4자리 표기)
+%y : 년도 (뒤에 2자리 표기)
+%M : 월 - 월 이름(January ~ December)
+%m : 월 - 월 숫자(00 ~ 12)
+%d : 일(00 ~ 31)
