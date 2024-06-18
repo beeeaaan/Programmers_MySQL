@@ -1,0 +1,9 @@
+SELECT BOOK_ID, DATE_FORMAT(PUBLISHED_DATE, '%Y-%m-%d') AS PUBLISHED_DATE  // YYYY-MM-DD 형식으로 조회
+FROM BOOK
+WHERE CATEGORY LIKE '인문' AND PUBLISHED_DATE LIKE '2021%'  // 인문이고 2021년에 출판된 경우
+ORDER BY PUBLISHED_DATE ASC;  // 오름차순 정렬
+
+SELECT 속성, DATE_FORMAT(속성, 날짜형식) AS 별칭  // YYYY-MM-DD 형식으로 조회
+FROM 테이블
+WHERE 속성 LIKE '문자열'  // 인문이고 2021년에 출판된 경우
+ORDER BY 속성 차순정렬;
