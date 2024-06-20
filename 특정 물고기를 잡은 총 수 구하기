@@ -1,0 +1,7 @@
+SELECT COUNT(*) AS FISH_COUNT  // 전체 갯수
+FROM FISH_INFO  // 이름이 아닌 타입으로 정의되어 있으므로 서브쿼리 사용
+WHERE FISH_TYPE IN 
+    // 해당 이름들의 타입 정보 조회
+    (SELECT FISH_TYPE 
+    FROM FISH_NAME_INFO 
+    WHERE FISH_NAME IN ('BASS', 'SNAPPER'))
