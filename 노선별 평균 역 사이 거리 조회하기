@@ -1,0 +1,12 @@
+SELECT ROUTE, 
+CONCAT(ROUND(SUM(D_BETWEEN_DIST), 1),'km') AS TOTAL_DISTANCE,   // 총 누계 거리
+CONCAT(ROUND(AVG(D_BETWEEN_DIST), 2), 'km') AS AVERAGE_DISTANCE  // 평균 역 사이 거리
+FROM SUBWAY_DISTANCE
+GROUP BY ROUTE
+ORDER BY ROUND(SUM(D_BETWEEN_DIST), 1) DESC;  // 총 누계 거리 기준 내림차순 정렬
+
+// ROUND 함수
+ROUND(숫자,반올림할 자릿수) : 숫자를 반올림할 자릿수 +1 자릿수에서 반올림
+
+// CONCAT 함수
+CONCAT(문자열1, 문자열2...) : 둘 이상의 문자열을 입력한 순서대로 합치기
