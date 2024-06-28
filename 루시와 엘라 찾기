@@ -1,0 +1,9 @@
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+WHERE NAME IN('Lucy','Ella','Pickle','Rogan','Sabrina','Mitty')
+ORDER BY ANIMAL_ID;
+
+// IN : 다수의 값 중에서 하나라도 조건을 만족하는 경우 해당 레코드를 선택
+SELECT * 
+FROM [테이블명] 
+WHERE [칼럼명] IN ([조건1], [조건2], [조건3]);
