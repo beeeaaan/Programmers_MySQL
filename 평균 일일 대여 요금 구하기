@@ -1,0 +1,8 @@
+SELECT ROUND(AVG(DAILY_FEE), 0) AS AVERAGE_FEE
+FROM CAR_RENTAL_COMPANY_CAR
+WHERE CAR_TYPE = 'SUV'
+
+// ROUND(값, 자릿수) : 반올림
+자릿수가 N : 소숫점 아래 N째 자리까지 반올림하여 표시
+자릿수가 -N : 반올림하여 10의 N승 자리까지 표시
+자릿수가 0 : 반올림하여 1의 자리까지 표시
