@@ -1,0 +1,13 @@
+SELECT A.BOOK_ID, B.AUTHOR_NAME, DATE_FORMAT(A.PUBLISHED_DATE, '%Y-%m-%d') AS PUBLISHED_DATE
+FROM BOOK A
+JOIN AUTHOR B 
+ON A.AUTHOR_ID = B.AUTHOR_ID
+WHERE A.CATEGORY = '경제'  // 경제 카테고리
+ORDER BY A.PUBLISHED_DATE;  // 출판일 기준 오름차순
+
+// INNER JOIN : 기준 테이블과 조인 테이블 모두 데이터가 존재해야 조회 가능
+SELECT <열 목록>
+FROM <첫 번째 테이블>
+INNER JOIN <두 번째 테이블> 
+ON <조인 조건>
+[WHERE 검색 조건]
