@@ -1,0 +1,7 @@
+SELECT ANIMAL_ID, NAME, DATETIME
+FROM ANIMAL_INS
+ORDER BY NAME, DATETIME DESC;  // 표시 없으면 오름차순 정렬이 기본 
+
+// 정렬
+ASC : 오름차순
+DESC : 내림차순
