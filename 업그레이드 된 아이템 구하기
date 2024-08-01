@@ -1,0 +1,22 @@
+SELECT TREE.ITEM_ID, INFO.ITEM_NAME, INFO.RARITY
+FROM ITEM_INFO INFO
+INNER JOIN ITEM_TREE TREE ON INFO.ITEM_ID = TREE.ITEM_ID
+WHERE TREE.PARENT_ITEM_ID IN (
+    SELECT ITEM_ID
+    FROM ITEM_INFO
+    WHERE RARITY = 'RARE')
+ORDER BY TREE.ITEM_ID DESC
+
+// IN : 특정 열의 값이 주어진 리스트에 포함되어 있는지 확인
+WHERE 컬럼 IN(조건)
+
+// INNER JOIN : 대상 테블에서 공통 속성으로 기준으로 '=' 비교하여 같은 값을 가지는 행 연결하는 방법
+1.SELECT[테이블명1.]속성명, [테이블명2.]속성명
+FROM 테이블명1 JOIN 테이블명2 USING(속성명)
+
+2.SELECT[테이블명1.]속성명, [테이블명2.]속성명
+FROM 테이블명1, 테이블명2 
+WHERE 테이블명1.속성명 = 테이블명2.속성명
+
+3.SELECT[테이블명1.]속성명, [테이블명2.]속성명
+FROM 테이블명1 NATURAL JOIN 테이블명2
