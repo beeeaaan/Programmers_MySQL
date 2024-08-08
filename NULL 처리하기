@@ -1,0 +1,5 @@
+SELECT ANIMAL_TYPE,IFNULL(NAME,'No name'),SEX_UPON_INTAKE from ANIMAL_INS
+ORDER BY ANIMAL_ID;
+
+// IFNULL : NULL일 경우 지정한 값으로 대체하여 출력
+SELECT IFNULL(Column명, "Null일 경우 대체 값") FROM 테이블명; 
