@@ -1,0 +1,5 @@
+SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') AS 날짜
+FROM ANIMAL_INS;
+
+// DATE_FORMAT : 날짜 형식 설정
+%Y(4자리 연도), %y(2자리 연도), %m(월), %d(일), %H(24시간), %h(12시간), %i, %s
