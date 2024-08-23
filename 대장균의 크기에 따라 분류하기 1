@@ -1,0 +1,13 @@
+SELECT ID, CASE 
+WHEN SIZE_OF_COLONY > 1000 THEN "HIGH"  //1000 초과
+WHEN SIZE_OF_COLONY > 100 THEN "MEDIUM"  // 100 초과 1000 이하
+ELSE "LOW" END AS SIZE  // 100 이하
+FROM ECOLI_DATA
+ORDER BY ID;
+
+// CASE : 조건에 맞는 값 반환
+CASE
+WHEN 조건1 THEN 조건1 충족할 때 반환되는 값
+WHEN 조건2 THEN 조건2 충족할 때 반환되는 값
+ELSE 모든 조건 해당되지 않을 때 반환되는 값
+END
