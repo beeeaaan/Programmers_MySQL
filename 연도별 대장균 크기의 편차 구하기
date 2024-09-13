@@ -1,0 +1,22 @@
+SELECT YEAR(DIFFERENTIATION_DATE) AS YEAR, MAX(SIZE_OF_COLONY) OVER(PARTITION BY YEAR(DIFFERENTIATION_DATE)) - SIZE_OF_COLONY AS YEAR_DEV, ID
+FROM ECOLI_DATA
+ORDER BY YEAR, YEAR_DEV;
+
+// WINDOW 함수
+함수(함수_적용_열) OVER (PARTITION BY 그룹열 ORDER BY 순서열)
+- PARTITION BY : Group By와 같은 기능
+- ORDER BY : Order By와 같은 기능(DESC : 내림차순)
+
+1. 집계함수
+SUM() : 합 / MIN() : 최소값 / MAX() : 최대값 / AVG() : 평균 / COUNT() : 갯수
+
+2. 순위
+1) ROW_NUMBER() : 중복 없는 순위. 행 번호
+2) RANK() : 중복 가능. 공동순위만큼 건너뜀
+3) DENSE_RANK() : 중복가능, 공동순위가 있더라도 순차적으로 순위 매겨짐
+
+3. 데이터 위치 바꾸기
+1) LAG(열, n, 결측값 채울 값) : n칸 미루기
+- LAG(열, n) OVER (PARTITION BY 그룹열 ORDER BY 순서열)
+2) LEAD(열, n, 결측값 채울 값) : n칸 당기기
+- LEAD(열, n) OVER (PARTITION BY 그룹열 ORDER BY 순서열)
