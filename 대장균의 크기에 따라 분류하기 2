@@ -1,0 +1,16 @@
+SELECT E.ID, 
+CASE WHEN E.R >= 0.75 THEN 'CRITICAL'  # 상위 0% ~ 25%
+     WHEN E.R >= 0.5 THEN 'HIGH'  # 26% ~ 50%
+     WHEN E.R >= 0.25 THEN 'MEDIUM'  # 76% ~ 100%
+    ELSE 'LOW'
+END AS COLONY_NAME
+FROM (SELECT ID, PERCENT_RANK() OVER (ORDER BY SIZE_OF_COLONY) AS R  # 백분위수
+    FROM ECOLI_DATA
+) E
+ORDER BY E.ID;
+
+// PERCENT_RANK()
+PERCENT_RANK() OVER (
+    [PARTITION BY partition_expression,... ] 
+    ORDER BY sort_expression [ASC | DESC],... 
+)
