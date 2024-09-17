@@ -1,7 +1,7 @@
 SELECT ID, LENGTH
 FROM FISH_INFO
-ORDER BY LENGTH DESC, ID  // 내림차순 정렬
-LIMIT 10;  // 10마리
+ORDER BY LENGTH DESC, ID  # 내림차순 정렬
+LIMIT 10;  # 10마리
 
 // SELECT 속성
 // FROM 테이블
