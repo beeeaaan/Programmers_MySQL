@@ -1,4 +1,4 @@
-SELECT COUNT(*)  // 전체 개수 세기
+SELECT COUNT(*)  # 전체 개수 세기
 FROM ANIMAL_INS;
 
 // SELECT 집계함수(속성)
