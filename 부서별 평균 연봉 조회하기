@@ -1,0 +1,8 @@
+SELECT D.DEPT_ID, D.DEPT_NAME_EN, ROUND(AVG(E.SAL)) AS AVG_SAL  # 평균 연봉 조회 및 소수 첫째 자리 반올림
+FROM HR_DEPARTMENT D
+INNER JOIN HR_EMPLOYEES E ON D.DEPT_ID = E.DEPT_ID
+GROUP BY D.DEPT_ID
+ORDER BY 3 DESC;  # 평균 연봉 기준 내림차순
+
+// ROUND : 두 번째 파라미터에 아무것도 안쓰거나 0을 쓰면 첫째 자리에서 반올림
+ROUND(속성, 0)  or  ROUND(속성)
