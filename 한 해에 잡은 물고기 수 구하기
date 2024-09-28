@@ -1,7 +1,8 @@
-SELECT COUNT(*) AS FISH_COUNT  /// 전체 개수
+SELECT COUNT(*) AS FISH_COUNT  # 전체 개수
 FROM FISH_INFO
-WHERE DATE_FORMAT(TIME, '%Y') = '2021';  // 연(year)만 표시
+WHERE DATE_FORMAT(TIME, '%Y') = '2021';  # 연(year)만 표시
 
-// SELECT COUNT(전체) AS 별칭
-// FROM 테이블
-// WHERE DATE_FORMAT(날짜, 형식) = '2021';  (DATE_FORMAT : 날짜를 지정한 형식으로 출력)
+// DATE_FORMAT : 날짜를 지정한 형식으로 출력
+SELECT COUNT(전체) AS 별칭
+FROM 테이블
+WHERE DATE_FORMAT(날짜, 형식) = '2021';
