@@ -1,0 +1,15 @@
+SELECT FOOD_TYPE, REST_ID, REST_NAME, FAVORITES
+FROM REST_INFO
+WHERE FAVORITES IN
+    # 음식 종류별로 즐겨찾기 수가 가장 많은 식당의 음식 종류 찾기
+    (SELECT MAX(FAVORITES)
+    FROM REST_INFO
+    GROUP BY FOOD_TYPE)
+GROUP BY FOOD_TYPE
+ORDER BY FOOD_TYPE DESC;
+
+// WHERE절의 서브쿼리 : 결과가 반드시 하나의 컬럼이어야 함. 단, EXISTS 제외 
+SELECT [컬럼]
+FROM [테이블]
+WHERE [컬럼][연산자]
+(SELECT [컬럼] FROM [테이블] WHERE 조건);
