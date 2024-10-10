@@ -1,0 +1,15 @@
+SELECT CAR_TYPE, COUNT(CAR_TYPE) AS CARS
+FROM CAR_RENTAL_COMPANY_CAR
+WHERE OPTIONS LIKE '%열선시트%' OR OPTIONS LIKE '%통풍시트%' OR OPTIONS LIKE '%가죽시트%'  # 하나 이상 포함
+GROUP BY CAR_TYPE
+ORDER BY CAR_TYPE;
+
+// IN : OR 조건을 한 번에 묶어서 표현할 때 사용
+SELECT 칼럼명
+FROM 테이블명
+WHERE 칼럼명 IN ('데이터1', '데이터2', '데이터3');
+
+// LIKE : 특정 문자 또는 문자열을 포함하고 있는 값을 검색할 때 사용
+SELECT 칼럼명
+FROM 테이블명
+WHERE 칼럼명 LIKE '특정 문자열';
