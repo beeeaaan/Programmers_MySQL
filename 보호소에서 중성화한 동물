@@ -4,4 +4,4 @@ JOIN ANIMAL_OUTS O on O.ANIMAL_ID = I.ANIMAL_ID
 # 들어올 때 Intract이면 중성화 X, 나갈때 Neutered이면 중성화 O
 WHERE (I.SEX_UPON_INTAKE like 'Intact%' and O.SEX_UPON_OUTCOME like 'Neutered%')
 # 들어올 때 Intract이면 중성화 X, 나갈때 Spayed이면 중성화 O
-OR (I.SEX_UPON_INTAKE like 'Intact%' and O.SEX_UPON_OUTCOME like 'Spayed%')
+OR (I.SEX_UPON_INTAKE like 'Intact%' and O.SEX_UPON_OUTCOME like 'Spayed%');
