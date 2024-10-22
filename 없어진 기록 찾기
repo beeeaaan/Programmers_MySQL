@@ -1,0 +1,10 @@
+SELECT OUTS.ANIMAL_ID, OUTS.NAME
+FROM ANIMAL_OUTS AS OUTS
+LEFT JOIN ANIMAL_INS AS INS
+ON OUTS.ANIMAL_ID = INS.ANIMAL_ID  -- 입양 간 기록과 보호소 들어온 기록이 일치하는 항목
+WHERE INS.ANIMAL_ID IS NULL;  -- 보호소에 들어온 기록 없는 동물
+
+// LEFT (OUTER) JOIN : 테이블1 컬럼 전부와 테이블2 컬럼에서 일치하는 값 반환
+SELECT 컬럼
+FROM 테이블1 LEFT JOIN 테이블2 
+ON 테이블1.컬럼 = 테이블2.컬럼;
