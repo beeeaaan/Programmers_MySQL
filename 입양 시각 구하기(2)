@@ -1,0 +1,14 @@
+SET @HOUR = -1;
+SELECT (@HOUR := @HOUR + 1) AS HOUR,  -- 시간대별
+    (SELECT COUNT(HOUR(DATETIME)) 
+    FROM ANIMAL_OUTS 
+    WHERE HOUR(DATETIME)=@HOUR) AS COUNT 
+    FROM ANIMAL_OUTS
+WHERE @HOUR < 23;  -- 0시부터 23시까지
+
+# 변수 선언
+- SET @변수 := value;
+  비교연산자(=) 아닌 대입연산자(:=) 사용
+
+- HOUR(DATETIME): 시간을 반환
+  SELECT HOUR(DATETIME);	--return 0~23
