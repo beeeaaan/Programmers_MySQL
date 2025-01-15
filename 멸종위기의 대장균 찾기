@@ -1,0 +1,45 @@
+-- 임시테이블 생성
+WITH RECURSIVE generations AS (
+    -- 최초 부모가 없는 대장균 개체(1세대)
+    SELECT ID, PARENT_ID, 1 AS GENERATION
+    FROM ECOLI_DATA 
+    WHERE PARENT_ID IS NULL
+    UNION ALL
+    -- 재귀적으로 각 개체의 자식 찾아 세대 계산
+    SELECT E.ID, E.PARENT_ID, G.GENERATION + 1
+    FROM ECOLI_DATA E
+    INNER JOIN generations G 
+    ON E.PARENT_ID = G.ID
+)
+-- 자식이 없는 개체 찾고 세대별로 카운트
+SELECT COUNT(*) AS COUNT, G.GENERATION
+FROM generations G
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM ECOLI_DATA CHILD
+    WHERE CHILD.PARENT_ID = G.ID
+)
+GROUP BY G.GENERATION
+ORDER BY G.GENERATION;
+
+-- WITH RECURSIVE(재귀 쿼리) : 가상 테이블 생성하여 가상 테이블 자신의 값을 참조하여 값을 결정할 때 사용
+* 반드시 UNION 사용
+* 반드시 비반복문(Non-Recursive)도 최소한 1개 요구(처음 한번만 실행)
+* 반드시 SubQuery에서 바깥의 가상의 테이블 참조하는 문장(반복문) 필요
+* 반복되는 문장은 반드시 정지조건(Termination condition) 요구
+
+WITH RECURSIVE TEMP_NAME (Col1, Col2, …) AS (
+	Non_RECURSIVE QUREY
+  UNION ALL
+  RECURSIVE QUREY
+)
+SELECT COL1, COL2
+FROM TEMP_NAME
+
+ex) 0 ~ 10의 값을 갖는 임시 테이블 생성
+WITH RECURSIVE CTE AS(
+    SELECT 0 AS NUM # 초기값 설정
+    UNION ALL
+    SELECT NUM+1 FROM CTE
+    WEHRE NUM < 10 # 반복을 멈추는 조건
+)​
